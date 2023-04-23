@@ -39,3 +39,17 @@ exports.userRegister = async ({ body }, res, next) => {
     next(error)
   }
 }
+
+exports.updatePassword = async ({ body, user }, res, next) => {
+  try {
+    await authService.updatePassword(body, user)
+
+    return authHelper.successResponse(
+      res,
+      statusCodes.OK,
+      messages.PASSWORD_CHANGED
+    )
+  } catch (error) {
+    next(error)
+  }
+}

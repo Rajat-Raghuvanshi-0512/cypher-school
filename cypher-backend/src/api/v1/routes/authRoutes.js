@@ -1,9 +1,19 @@
-const { userLogin, userRegister } = require('../controllers/authController')
-const { registerUserValidation } = require('../validations/authValidation')
+const {
+  userLogin,
+  userRegister,
+  updatePassword,
+} = require('../controllers/authController')
+const {
+  registerUserValidation,
+  loginUserValidation,
+  upPasswordValidation,
+} = require('../validations/authValidation')
+const { checkAuth } = require('../middleware/authMiddleware')
 
 const router = require('express').Router()
 
-router.route('/login').post(userLogin)
+router.route('/login').post(loginUserValidation, userLogin)
 router.post('/register', registerUserValidation, userRegister)
+router.put('/password', checkAuth, upPasswordValidation, updatePassword)
 
 module.exports = router

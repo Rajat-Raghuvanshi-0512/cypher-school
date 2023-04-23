@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose')
+const bcrypt = require('bcrypt')
 
 const User = new Schema(
   {
@@ -43,8 +44,26 @@ const User = new Schema(
       education: String,
       role: String,
     },
+    interests: [],
   },
   { versionKey: false, timestamps: true }
 )
+
+User.pre('save', async function (next) {
+  try {
+    if (!this.isModified('password')) return next()
+    const salt = await bcrypt.genSalt(10)
+
+    // hash the password using our new salt
+    const hashPass = await bcrypt.hash(this.password, salt)
+    this.password = hashPass
+    next()
+  } catch (error) {
+    return next(error)
+  }
+})
+User.methods.comparePassword = async function (candidatePassword) {
+  return await bcrypt.compare(candidatePassword, this.password)
+}
 
 module.exports = model('user', User)

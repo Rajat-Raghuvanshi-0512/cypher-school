@@ -1,7 +1,7 @@
 module.exports = {
   INVALID_TOKEN: 'User session expired',
   EMPTY_AUTH: 'User token not provided',
-  USER_NOT_EXIST: 'Invalid user.',
+  USER_NOT_EXIST: 'User Not Found',
   OTP_INVALID: 'OTP Invalid',
   OTP_SENT: 'OTP Sent Successfully',
   OTP_MATCHED: 'Otp matched successfully',
@@ -57,6 +57,7 @@ module.exports = {
   SLOTS_BOOKED: 'Slot booked successfully',
   ALL_SLOTS: 'All booked slots are ',
   LOGOUT: 'User logged out',
+  PASSWORDS_DO_NOT_MATCH: 'Passwords do not match',
   PASSWORD_CHANGED: 'Password Changed Successfully',
   USERS_LIST: 'List of users',
   BRANDS_LIST: 'List of brands',

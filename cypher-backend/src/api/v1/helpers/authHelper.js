@@ -31,23 +31,6 @@ exports.jwtVerify = (token) => {
     return error
   }
 }
-
-// <---------------------------------------------------Otp-Generate--------------------------------------------------->
-exports.generateOtp = () => {
-  return Math.floor(1000 + Math.random() * 9000)
-}
-
-// <--------------------------------------------------Media Type Id Finder----------------------------------------------->
-exports.mediaIdFinder = async (mediaUniqueNumber) => {
-  try {
-    const { _id } = await Models.MediaRequestType.findOne({
-      mediaUniqueNumber,
-    })
-    return _id
-  } catch (error) {
-    return error
-  }
-}
 // <--------------------------------------------------Hash password----------------------------------------------->
 
 exports.hashPassword = async (password) => {
