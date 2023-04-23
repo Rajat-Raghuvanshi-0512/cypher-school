@@ -7,6 +7,7 @@ const AboutMe = () => {
         name="about"
         id="about"
         className="w-full h-32 resize-none rounded-lg outline-none px-4 text-sm py-5"
+        placeholder="Add something about you..."
       ></textarea>
     </div>
   );

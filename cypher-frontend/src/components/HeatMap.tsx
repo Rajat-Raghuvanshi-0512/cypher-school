@@ -27,17 +27,15 @@ const HeatMap = () => {
         .map(() => Math.floor(Math.random() * 100))
     );
   return (
-    <div className="mt-10">
-      <HeatM
-        xLabels={xLabels}
-        yLabels={yLabels}
-        data={data}
-        cellStyle={(background, value, min, max, data, x, y) => ({
-          background: `rgba(255,165,0, ${1 - (max - value) / (max - min)})`,
-          fontSize: "11px",
-        })}
-      />
-    </div>
+    <HeatM
+      xLabels={xLabels}
+      yLabels={yLabels}
+      data={data}
+      cellStyle={(background, value, min, max, data, x, y) => ({
+        background: `rgba(255,165,0, ${1 - (max - value) / (max - min)})`,
+        fontSize: "11px",
+      })}
+    />
   );
 };
 
