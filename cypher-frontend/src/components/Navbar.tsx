@@ -1,6 +1,6 @@
 const Navbar = () => {
   return (
-    <nav className="px-10 py-3">
+    <nav className="px-10 py-3 bg-white">
       <div className="flex justify-between">
         <div className="h-9 w-9 flex items-center gap-3">
           <img
@@ -14,7 +14,13 @@ const Navbar = () => {
           </div>
         </div>
         <div className="flex gap-3">
-          <input type="search" name="search" id="search" />
+          <input
+            type="search"
+            name="search"
+            id="search"
+            className="bg-[#f2f4fb] rounded-3xl placeholder:text-slate-600 px-5 placeholder:font-light placeholder:text-sm outline-none"
+            placeholder="Search and Learn"
+          />
           <div>bell icon</div>
           <div>profile icon</div>
           <div className="flex items-start gap-1">

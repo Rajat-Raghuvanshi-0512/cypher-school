@@ -1,13 +1,25 @@
-import HeatMap from "./components/HeatMap";
-import HeroSection from "./components/HeroSection";
-import Navbar from "./components/Navbar";
+import {
+  AboutMe,
+  CipherMap,
+  Education,
+  Interests,
+  Navbar,
+  SocialMedia,
+  UpdatePass,
+  HeroSection,
+} from "./components";
 
 const App = () => {
   return (
     <>
       <Navbar />
       <HeroSection />
-      <HeatMap />
+      <AboutMe />
+      <CipherMap />
+      <SocialMedia />
+      <Education />
+      <UpdatePass />
+      <Interests />
     </>
   );
 };
